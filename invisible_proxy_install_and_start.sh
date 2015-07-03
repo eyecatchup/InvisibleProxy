@@ -22,6 +22,7 @@ echo "Interface with internet connectivity (e.g. eth0): "
 read iInf
 echo "Wireless interface (e.g. wlan0): "
 read wInf
+sed -i s/interface=[a-zA-Z0-9]*/interface=$wInf/g invisible_proxy_configuration.conf
 echo "Stopping network manager ..."
 service network-manager stop
 echo "Stopping dnsmasq ..."
